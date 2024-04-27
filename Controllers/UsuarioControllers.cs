@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using principal._05_DataAcces.context;
 using principal._05_DataAcces.entity;
+using principal.conexion;
 
 namespace principal.Controllers
 {
@@ -11,6 +12,7 @@ namespace principal.Controllers
     
 
         private readonly UsuarioContext dbContext;
+        private Data data;
 
         public UsuarioControllers(UsuarioContext dbContext)
         {
@@ -18,11 +20,12 @@ namespace principal.Controllers
             this.dbContext = dbContext;
         }
 
-        [HttpGet(Name = "GetUsuarios")]
-        public ActionResult<IEnumerable<Usuario>> Get()
+        [HttpGet(Name = "Trabajadores")]
+        public ActionResult<string> Get()
         {
-            var usuarios = dbContext.Usuarios.ToList();
-            return usuarios;
+            data = new Data();
+
+            return data.conexionBaseDatos();
         }
 
         [HttpPost(Name = "createUsuario")]

@@ -17,10 +17,4 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="04_Repository\" />
-    <Folder Include="03_Business\" />
-    <Folder Include="01_DataTransfer\" />
-  </ItemGroup>
-
 </Project>
