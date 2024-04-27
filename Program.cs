@@ -1,11 +1,6 @@
-using principal._05_DataAcces.context;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
-
-
-builder.Services.AddSqlServer<UsuarioContext>(builder.Configuration.GetConnectionString("cnpruebatecnica"));
 
 // Add services to the container.
 builder.Services.AddControllers();
